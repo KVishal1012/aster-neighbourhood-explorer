@@ -1,0 +1,69 @@
+name: Refresh official planning sources
+on:
+  schedule:
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    defaults:
+      run:
+        working-directory: builder
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m venv .venv
+      - run: .venv/bin/pip install -r requirements.txt
+      - run: npm ci
+      - run: mkdir -p public && cp -a ../site/planning public/planning
+      - run: .venv/bin/python -m unittest discover -s tests -v
+      - run: npm run test:planning
+      - name: Acquire and validate (retain last good snapshot on failure)
+        id: sources
+        continue-on-error: true
+        run: .venv/bin/python scripts/refresh_planning.py
+      - name: Archive source receipts and raw inputs for reproducibility
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-acquisition-${{ github.run_id }}
+          path: builder/data/planning-source
+          retention-days: 90
+          if-no-files-found: warn
+      - run: npm run build:public
+      - run: npm run test:worker
+      - name: Update public package
+        run: |
+          cp -a dist-public/. ../site/
+          git -C .. config user.name 'github-actions[bot]'
+          git -C .. config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C .. add site
+          if ! git -C .. diff --cached --quiet; then
+            git -C .. commit -m 'data: refresh verified planning snapshot and health'
+            git -C .. push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deployment
+      - name: Mark degraded refresh for maintainer attention
+        if: steps.sources.outcome == 'failure'
+        run: exit 1

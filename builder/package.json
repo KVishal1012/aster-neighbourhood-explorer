@@ -1,0 +1,28 @@
+{
+  "name": "aster-toronto",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:public": "tsc -b && vite build --mode public && .venv/bin/python scripts/package_public.py",
+    "test:planning": "node --experimental-strip-types --test tests/planning-spatial.test.mjs tests/planning-export.test.mjs",
+    "test:worker": "node --experimental-strip-types --test tests/planning-worker.test.mjs"
+  },
+  "dependencies": {
+    "cesium": "1.145.0",
+    "lucide-react": "0.468.0",
+    "maplibre-gl": "6.9.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@types/geojson": "7946.0.16",
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-react": "5.0.3",
+    "typescript": "5.9.2",
+    "vite": "7.3.6"
+  }
+}

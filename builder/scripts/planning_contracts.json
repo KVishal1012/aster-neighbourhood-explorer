@@ -1,0 +1,549 @@
+{
+  "qualified_at": "2026-10-22T11:31:37.052892+00:00",
+  "sources": {
+    "projects": {
+      "resource_id": "7aad5dbd-a769-4bd5-b5d2-f9bb605b6bf9",
+      "qualified_sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+      "crs": null,
+      "fields": {
+        "Address": [
+          "string"
+        ],
+        "Application Information Centre Link": [
+          "string"
+        ],
+        "Application Number": [
+          "string"
+        ],
+        "Date Received": [
+          "string"
+        ],
+        "Description": [
+          "string"
+        ],
+        "Pipeline Status": [
+          "string"
+        ],
+        "Proposed Gross Floor Area": [
+          "string"
+        ],
+        "Proposed Non-Residential Gross Floor Area": [
+          "string"
+        ],
+        "Proposed Residential Gross Floor Area": [
+          "string"
+        ],
+        "Proposed Residential Units": [
+          "string"
+        ],
+        "Ward": [
+          "string"
+        ],
+        "_id": [
+          "string"
+        ]
+      }
+    },
+    "applications": {
+      "resource_id": "8907d8ed-c515-4ce9-b674-9f8c6eefcf0d",
+      "qualified_sha256": "7e0399395f004722b27998117c0627c943ec9a953da43b53f733b93834873e6e",
+      "crs": null,
+      "fields": {
+        "APPLICATION#": [
+          "string"
+        ],
+        "APPLICATION_TYPE": [
+          "string"
+        ],
+        "APPLICATION_URL": [
+          "string"
+        ],
+        "COMMUNITY_MEETING_DATE": [
+          "string"
+        ],
+        "COMMUNITY_MEETING_LOCATION": [
+          "string"
+        ],
+        "COMMUNITY_MEETING_TIME": [
+          "string"
+        ],
+        "CONTACT_EMAIL": [
+          "string"
+        ],
+        "CONTACT_NAME": [
+          "string"
+        ],
+        "CONTACT_PHONE": [
+          "string"
+        ],
+        "DATE_SUBMITTED": [
+          "string"
+        ],
+        "DESCRIPTION": [
+          "string"
+        ],
+        "FOLDERRSN": [
+          "string"
+        ],
+        "PARENT_FOLDER_NUMBER": [
+          "string"
+        ],
+        "POSTAL": [
+          "string"
+        ],
+        "REFERENCE_FILE#": [
+          "string"
+        ],
+        "STATUS": [
+          "string"
+        ],
+        "STREET_DIRECTION": [
+          "string"
+        ],
+        "STREET_NAME": [
+          "string"
+        ],
+        "STREET_NUM": [
+          "string"
+        ],
+        "STREET_TYPE": [
+          "string"
+        ],
+        "WARD_NAME": [
+          "string"
+        ],
+        "WARD_NUMBER": [
+          "string"
+        ],
+        "X": [
+          "string"
+        ],
+        "Y": [
+          "string"
+        ],
+        "_id": [
+          "string"
+        ]
+      }
+    },
+    "addresses": {
+      "resource_id": "b1c2ab72-dfe7-4b29-8550-6d1cfaa61733",
+      "qualified_sha256": "3cc6f8a2370ffef36345503d5553126687988e259dc5dfef17f6e26e7a542518",
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "fields": {
+        "ADDRESS_CLASS": [
+          "string"
+        ],
+        "ADDRESS_CLASS_DESC": [
+          "string"
+        ],
+        "ADDRESS_FULL": [
+          "string"
+        ],
+        "ADDRESS_ID": [
+          "number"
+        ],
+        "ADDRESS_ID_LINK": [
+          "null",
+          "number"
+        ],
+        "ADDRESS_NUMBER": [
+          "string"
+        ],
+        "ADDRESS_POINT_ID": [
+          "number"
+        ],
+        "ADDRESS_POINT_ID_LINK": [
+          "null",
+          "number"
+        ],
+        "ADDRESS_STATUS": [
+          "string"
+        ],
+        "ADDRESS_STRING_ID": [
+          "number"
+        ],
+        "CENTRELINE_ID": [
+          "number"
+        ],
+        "CENTRELINE_MEASURE": [
+          "null",
+          "number"
+        ],
+        "CENTRELINE_OFFSET": [
+          "null",
+          "number"
+        ],
+        "CENTRELINE_SIDE": [
+          "string"
+        ],
+        "CLASS_FAMILY": [
+          "number"
+        ],
+        "CLASS_FAMILY_DESC": [
+          "string"
+        ],
+        "GENERAL_USE": [
+          "string"
+        ],
+        "GENERAL_USE_CODE": [
+          "number"
+        ],
+        "HI_NUM": [
+          "null",
+          "number"
+        ],
+        "HI_NUM_SUF": [
+          "string"
+        ],
+        "LINEAR_NAME": [
+          "string"
+        ],
+        "LINEAR_NAME_DESC": [
+          "string"
+        ],
+        "LINEAR_NAME_DIR": [
+          "string"
+        ],
+        "LINEAR_NAME_FULL": [
+          "string"
+        ],
+        "LINEAR_NAME_ID": [
+          "number"
+        ],
+        "LINEAR_NAME_TYPE": [
+          "string"
+        ],
+        "LO_NUM": [
+          "number"
+        ],
+        "LO_NUM_SUF": [
+          "string"
+        ],
+        "MAINT_STAGE": [
+          "string"
+        ],
+        "MUNICIPALITY": [
+          "string"
+        ],
+        "MUNICIPALITY_NAME": [
+          "string"
+        ],
+        "OBJECTID": [
+          "string"
+        ],
+        "PLACE_NAME": [
+          "string"
+        ],
+        "PLACE_NAME_ALL": [
+          "string"
+        ],
+        "WARD": [
+          "string"
+        ],
+        "WARD_NAME": [
+          "string"
+        ],
+        "_id": [
+          "number"
+        ]
+      }
+    },
+    "zoning": {
+      "resource_id": "d75fa1ed-cd04-4a0b-bb6d-2b928ffffa6e",
+      "qualified_sha256": "2e87ee0f66e9dbe6617097a8151739d7f40e6cbf3eeed5e1c5a2e5a62d98ff7d",
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "fields": {
+        "AREA_UNITS": [
+          "null",
+          "number"
+        ],
+        "COVERAGE": [
+          "null"
+        ],
+        "DENSITY": [
+          "null",
+          "number"
+        ],
+        "EXCPTN_NO": [
+          "null",
+          "number"
+        ],
+        "FRONTAGE": [
+          "null",
+          "number"
+        ],
+        "FSI_TOTAL": [
+          "null",
+          "number"
+        ],
+        "GEN_ZONE": [
+          "number"
+        ],
+        "HOLDING_ID": [
+          "null",
+          "number"
+        ],
+        "PRCNT_COMM": [
+          "null",
+          "number"
+        ],
+        "PRCNT_EMMP": [
+          "null",
+          "number"
+        ],
+        "PRCNT_OFFC": [
+          "null",
+          "number"
+        ],
+        "PRCNT_RES": [
+          "null",
+          "number"
+        ],
+        "STAND_SET": [
+          "null",
+          "number"
+        ],
+        "UNITS": [
+          "null",
+          "number"
+        ],
+        "ZBL_CHAPT": [
+          "string"
+        ],
+        "ZBL_EXCPTN": [
+          "string"
+        ],
+        "ZBL_SECTN": [
+          "string"
+        ],
+        "ZN_AREA": [
+          "null",
+          "number"
+        ],
+        "ZN_EXCPTN": [
+          "string"
+        ],
+        "ZN_HOLDING": [
+          "string"
+        ],
+        "ZN_STATUS": [
+          "number"
+        ],
+        "ZN_STRING": [
+          "string"
+        ],
+        "ZN_ZONE": [
+          "string"
+        ],
+        "_id": [
+          "number"
+        ]
+      }
+    },
+    "heights": {
+      "resource_id": "eec27e60-7c2d-4c46-8fa1-b64f441bcc39",
+      "qualified_sha256": "42e919eedcff834b9208080eb68e3a069a68be8401fcf7177e90198dfe40b11b",
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "fields": {
+        "HT_LABEL": [
+          "number"
+        ],
+        "HT_STORIES": [
+          "null",
+          "number"
+        ],
+        "HT_STRING": [
+          "string"
+        ],
+        "_id": [
+          "number"
+        ]
+      }
+    },
+    "neighbourhoods": {
+      "resource_id": "0719053b-28b7-48ea-b863-068823a93aaa",
+      "qualified_sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "fields": {
+        "AREA_ATTR_ID": [
+          "number"
+        ],
+        "AREA_DESC": [
+          "string"
+        ],
+        "AREA_ID": [
+          "number"
+        ],
+        "AREA_LONG_CODE": [
+          "string"
+        ],
+        "AREA_NAME": [
+          "string"
+        ],
+        "AREA_SHORT_CODE": [
+          "string"
+        ],
+        "CLASSIFICATION": [
+          "string"
+        ],
+        "CLASSIFICATION_CODE": [
+          "string"
+        ],
+        "OBJECTID": [
+          "number"
+        ],
+        "PARENT_AREA_ID": [
+          "null"
+        ],
+        "_id": [
+          "number"
+        ]
+      }
+    },
+    "streets": {
+      "resource_id": "7bc94ccf-7bcf-4a7d-88b1-bdfc8ec5aaf1",
+      "qualified_sha256": "786db8e402cfa1102474c01f2d1b3b3287f091d8e0574e9ce3405dc62bb1af47",
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "fields": {
+        "ADDRESS_L": [
+          "string"
+        ],
+        "ADDRESS_R": [
+          "string"
+        ],
+        "BEGIN_ADDR_L": [
+          "null",
+          "number"
+        ],
+        "BEGIN_ADDR_POINT_ID_L": [
+          "null",
+          "number"
+        ],
+        "BEGIN_ADDR_POINT_ID_R": [
+          "null",
+          "number"
+        ],
+        "BEGIN_ADDR_R": [
+          "null",
+          "number"
+        ],
+        "CENTRELINE_ID": [
+          "number"
+        ],
+        "CENTRELINE_STATUS": [
+          "string"
+        ],
+        "END_ADDR_L": [
+          "null",
+          "number"
+        ],
+        "END_ADDR_POINT_ID_L": [
+          "null",
+          "number"
+        ],
+        "END_ADDR_POINT_ID_R": [
+          "null",
+          "number"
+        ],
+        "END_ADDR_R": [
+          "null",
+          "number"
+        ],
+        "FEATURE_CODE": [
+          "number"
+        ],
+        "FEATURE_CODE_DESC": [
+          "string"
+        ],
+        "FROM_INTERSECTION_ID": [
+          "number"
+        ],
+        "HIGH_NUM_EVEN": [
+          "null",
+          "number"
+        ],
+        "HIGH_NUM_ODD": [
+          "null",
+          "number"
+        ],
+        "HI_NUM_L": [
+          "null",
+          "number"
+        ],
+        "HI_NUM_R": [
+          "null",
+          "number"
+        ],
+        "JURISDICTION": [
+          "string"
+        ],
+        "LINEAR_NAME": [
+          "string"
+        ],
+        "LINEAR_NAME_DESC": [
+          "string"
+        ],
+        "LINEAR_NAME_DIR": [
+          "string"
+        ],
+        "LINEAR_NAME_FULL": [
+          "string"
+        ],
+        "LINEAR_NAME_FULL_LEGAL": [
+          "string"
+        ],
+        "LINEAR_NAME_ID": [
+          "number"
+        ],
+        "LINEAR_NAME_LABEL": [
+          "string"
+        ],
+        "LINEAR_NAME_TYPE": [
+          "string"
+        ],
+        "LOW_NUM_EVEN": [
+          "null",
+          "number"
+        ],
+        "LOW_NUM_ODD": [
+          "null",
+          "number"
+        ],
+        "LO_NUM_L": [
+          "null",
+          "number"
+        ],
+        "LO_NUM_R": [
+          "null",
+          "number"
+        ],
+        "MI_PRINX": [
+          "number"
+        ],
+        "OBJECTID": [
+          "number"
+        ],
+        "ONEWAY_DIR_CODE": [
+          "null",
+          "number"
+        ],
+        "ONEWAY_DIR_CODE_DESC": [
+          "string"
+        ],
+        "PARITY_L": [
+          "string"
+        ],
+        "PARITY_R": [
+          "string"
+        ],
+        "TO_INTERSECTION_ID": [
+          "number"
+        ],
+        "_id": [
+          "number"
+        ]
+      }
+    }
+  }
+}

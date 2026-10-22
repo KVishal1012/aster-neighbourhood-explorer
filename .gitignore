@@ -1,0 +1,8 @@
+builder/node_modules
+builder/.venv
+builder/data/
+builder/public/
+builder/dist-public/
+**/__pycache__/
+**/*.pyc
+**/*.tsbuildinfo
