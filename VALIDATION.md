@@ -30,10 +30,18 @@ Display neighbourhood polygons are simplified by 10 m. Coverage calculations use
 
 ## Outstanding validation
 
-- Five independent resident sessions have not been performed. Target: at least four independently find a project, identify its stage and locate its source.
+- No independent resident sessions have occurred. On October 22, the owner chose documented developer walkthroughs plus optional self-guided public feedback instead of recruiting five residents. This is not equivalent evidence of resident usability or impact.
 - Formal screen-reader and throttled mobile-network testing remain pending. Automated tests and browser inspection do not substitute for these evaluations.
 - Source updates are snapshots, not live construction observations. GIS observations remain limited by publisher completeness and positional accuracy.
 
-## Resident study protocol
+## Optional resident study protocol
 
 With consent, ask each participant to choose a familiar Toronto location, find a project within 800 m, explain its status, locate its source date and identify an unlocated record. Record completion, help needed, confusion and suggested improvements; do not collect home addresses in study notes. Any approval-versus-completion misunderstanding blocks an award-ready claim until corrected and retested.
+
+## Additional verified behavior
+
+- Snapshot-pinned share link includes the selected location, radius, dataset and filters.
+- Latest application evidence preserves Closed as the source status while explicitly showing Unknown for its unqualified planning-stage interpretation.
+- Browser CSV export completed: 560 application rows for the downtown 800 m query, all pinned to snapshot f3a5f9ee996a0f10f91c, original statuses retained.
+- Public package: 1,081 content-addressed objects, 351,854,075 compressed bytes across three retained snapshots.
+- Local research production build still succeeds. Public build includes no mobility API or Cesium code.

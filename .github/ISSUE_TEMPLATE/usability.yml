@@ -1,0 +1,42 @@
+name: Usability feedback
+description: Share an optional observation about a planning explorer task.
+title: '[Feedback] '
+body:
+  - type: markdown
+    attributes:
+      value: 'This issue is public. Do not include your home address, name, email, exact location or other personal information. Use 100 Queen St W for examples.'
+  - type: dropdown
+    id: task
+    attributes:
+      label: Task
+      options:
+        - Find a nearby project
+        - Understand its status
+        - Inspect source evidence
+        - Inspect zoning dates
+        - Browse an unlocated record
+        - Share or export evidence
+        - Keyboard or accessibility
+    validations:
+      required: true
+  - type: dropdown
+    id: completion
+    attributes:
+      label: Could you finish the task?
+      options:
+        - Yes, independently
+        - Yes, with help
+        - No
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: What happened or was confusing?
+      description: Describe the interaction without personal information.
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Browser and device type (optional)
