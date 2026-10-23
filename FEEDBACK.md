@@ -28,4 +28,4 @@ Record each real observation, its source, the affected task, a reproducible fix 
 
 - Developer walkthroughs verified source inspection, status distinctions, unlocated records and CSV export.
 - The first download event was slow through the automation interface; this does not establish normal user download performance.
-- Formal screen-reader evaluation and measured throttled-device performance remain unverified.
+- Formal screen-reader and physical-device CPU evaluation remain unverified. One controlled 390 px / 1.6 Mbit/s / 150 ms test reached address results in 4.746 seconds after deferring the optional map.

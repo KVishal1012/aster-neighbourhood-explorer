@@ -31,7 +31,7 @@ Display neighbourhood polygons are simplified by 10 m. Coverage calculations use
 ## Outstanding validation
 
 - No independent resident sessions have occurred. On October 22, the owner chose documented developer walkthroughs plus optional self-guided public feedback instead of recruiting five residents. This is not equivalent evidence of resident usability or impact.
-- Formal screen-reader and throttled mobile-network testing remain pending. Automated tests and browser inspection do not substitute for these evaluations.
+- Formal screen-reader testing remains pending; controlled mobile-network emulation is recorded below. Automated tests and browser inspection do not substitute for these evaluations.
 - Source updates are snapshots, not live construction observations. GIS observations remain limited by publisher completeness and positional accuracy.
 
 ## Optional resident study protocol
@@ -45,3 +45,15 @@ With consent, ask each participant to choose a familiar Toronto location, find a
 - Browser CSV export completed: 560 application rows for the downtown 800 m query, all pinned to snapshot f3a5f9ee996a0f10f91c, original statuses retained.
 - Public package: 1,081 content-addressed objects, 351,854,075 compressed bytes across three retained snapshots.
 - Local research production build still succeeds. Public build includes no mobility API or Cesium code.
+
+## Mobile performance refinement
+
+At a 390 × 844 viewport, a temporary shared 1.6 Mbit/s / 150 ms latency preview exposed map startup contention. Mobile now starts in list view; Show map and the 3D control explicitly load geographic context. A cached filter action returned updated results in 7 ms through the browser automation interface; this is a desktop-hosted emulation, not a physical-phone CPU benchmark.
+
+At a verified 390 px viewport, a cold address search for 100 Queen St W became visible at **4,746 ms after navigation** with shared 1.6 Mbit/s bandwidth and 150 ms response latency. A DOM-only timestamp captured the post-render result; it is local, contains no searched address and is not transmitted or stored. This is one controlled run on a desktop host, not a real-device benchmark or a service-level guarantee. Narrow screens render the complete results workflow without creating a map canvas.
+
+GitHub validation passed on Linux. The manually dispatched official-source refresh also completed successfully: https://github.com/KVishal1012/aster-neighbourhood-explorer/actions/runs/39868265420 . Daily checks are configured for 10:00 UTC; scheduled execution time is best effort.
+
+## Scheduled refresh verified — October 23, 2026
+
+A real `schedule` event completed successfully (run 39970160855), with source check time 14:32:50 UTC and snapshot `817447cb12a48dba75bb`. Five published snapshots are retained; 1,954 content-addressed objects total 601,808,078 compressed bytes. Counts remain 2,391 projects and 26,648 application rows. The schedule is configured for 10:00 UTC but this run began at 14:30 UTC, demonstrating that GitHub scheduling can be delayed. Dates shown by the application are actual checks, not scheduled intentions.
