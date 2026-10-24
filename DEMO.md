@@ -21,14 +21,14 @@ Applications are a separate view. Their original statuses are preserved; the nor
 
 Desktop map at the saved public query, captured October 23, 2026:
 
-![Public map showing 18 Under Review project records within 800 metres of the selected municipal address](docs/images/planning-desktop.png)
+![Public map showing 18 Under Review project records within 800 metres of the selected municipal address](docs/images/planning-desktop.jpg)
 
 Source inspection for 191 Dundas St W, captured October 23, 2026:
 
-![Evidence panel with original Under Review status, source date, address-derived geometry and limitations](docs/images/planning-evidence.png)
+![Evidence panel with original Under Review status, source date, address-derived geometry and limitations](docs/images/planning-evidence.jpg)
 
 Mobile address search at 390 × 844, captured from the local release preview on October 22, 2026. This is a desktop browser viewport, not a physical-device test:
 
-![Mobile address search showing the municipal match for 100 Queen St W](docs/images/planning-mobile.png)
+![Mobile address search showing the municipal match for 100 Queen St W](docs/images/planning-mobile.jpg)
 
 These walkthroughs are developer verification. No independent resident study or measured civic-impact finding is claimed. See [VALIDATION.md](VALIDATION.md) and the optional [feedback guide](FEEDBACK.md).
