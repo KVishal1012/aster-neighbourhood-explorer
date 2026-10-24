@@ -4,6 +4,8 @@ Public beta: https://kvishal1012.github.io/aster-neighbourhood-explorer/
 
 Free public beta: discover recorded development and mapped zoning near a Toronto address. Guided browser-only queries, dated evidence, source attributes, exports and optional illustrative building context.
 
+[Try the 90-second demonstration and view actual screenshots](DEMO.md).
+
 ## Coverage and limitations
 
 Toronto only. GTA coverage and energy layers are planned, not implemented. Project and application records are separate. Exact application statuses are preserved, with documented planning stage marked Unknown until their definitions are qualified. **Active does not confirm construction.** Exact municipal address matching leaves ambiguous or unmatched records unlocated and searchable. Zoning is informational, with source amendments and exceptions requiring official review. Building extrusions use source AVG_HEIGHT on a flat base; no proposed buildings, surveyed roof reconstruction or terrain alignment is claimed.

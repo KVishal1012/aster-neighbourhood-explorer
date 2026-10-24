@@ -30,6 +30,8 @@ jobs:
       - run: npm run test:planning
       - run: npm run build:public
       - run: npm run test:worker
+      - name: Retain published bundles for already-open tabs
+        run: cp -an ../site/assets/. dist-public/assets/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: builder/dist-public
