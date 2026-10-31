@@ -15,11 +15,11 @@ const result = {snapshot_id: snapshot.id, query, rows: [feature], coverage: true
 
 test('CSV preserves snapshot identity, exact status and measured zero distance', () => {
   const csv = serializeEvidenceCsv(snapshot, result);
-  assert.equal(csv, '"snapshot_id","source","source_id","address_or_label","source_status","normalized_stage","distance_m","geometry_origin","missing"\r\n' +
-    '"3109928bc7881940611a","projects","7","100 Queen St W","Active","Active","0","address-derived point",""');
+  assert.equal(csv, '"snapshot_id","source","source_id","address_or_label","source_status","normalized_stage","distance_m","geometry_origin","missing","source_publisher","source_retrieved_at","source_url","status_caveat"\r\n' +
+    '"3109928bc7881940611a","projects","7","100 Queen St W","Active","Active","0","address-derived point","","City of Toronto","2026-10-22T11:31:22Z","","Planning approval does not confirm construction has started or finished. Retrieval is not an observation date."');
   const missing = serializeEvidenceCsv(snapshot, {...result, rows: [{...feature, distance: undefined,
     geometry_origin: 'unlocated', missing: 'No exact municipal address match'}]});
-  assert.ok(missing.endsWith('"","unlocated","No exact municipal address match"'));
+  assert.ok(missing.includes('"","unlocated","No exact municipal address match"'));
 });
 
 test('CSV quotes commas, quotes and multiline text and neutralizes spreadsheet formula prefixes', () => {

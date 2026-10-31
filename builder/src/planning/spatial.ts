@@ -3,7 +3,7 @@
  * default Toronto WGS84->NAD83 operation. Tested against pyproj control points.
  */
 export function project(lon:number,lat:number):[number,number]{
- if(!Number.isFinite(lon)||!Number.isFinite(lat)||lon < -80||lon > -78||lat < 43||lat > 45)throw new Error('Location is outside the supported Toronto-region envelope.');
+ if(!Number.isFinite(lon)||!Number.isFinite(lat)||lon < -81||lon > -78||lat < 43||lat > 45.5)throw new Error('Location is outside the supported GTA-region envelope.');
  const a=6378137,f=1/298.257222101,e=f*(2-f),ep=e/(1-e),k=.9996;
  const p=lat*Math.PI/180,l=(lon+81)*Math.PI/180,s=Math.sin(p),c=Math.cos(p),t=Math.tan(p)**2,C=ep*c*c,A=c*l,N=a/Math.sqrt(1-e*s*s);
  const M=a*((1-e/4-3*e**2/64-5*e**3/256)*p-(3*e/8+3*e**2/32+45*e**3/1024)*Math.sin(2*p)+(15*e**2/256+45*e**3/1024)*Math.sin(4*p)-35*e**3/3072*Math.sin(6*p));
@@ -38,5 +38,14 @@ export function cellKeys(p:XY,radius:number,size=2000):string[]{
  const keys=[];for(let x=Math.floor((p[0]-radius)/size);x<=Math.floor((p[0]+radius)/size);x++)for(let y=Math.floor((p[1]-radius)/size);y<=Math.floor((p[1]+radius)/size);y++)keys.push(`${x}_${y}`);return keys;
 }
 export function validateQuery(q:{lon:number;lat:number;radius:number;kind:string}):void{
- if(![400,800,1600].includes(q.radius)||!['projects','applications','zoning','heights'].includes(q.kind))throw new Error('Unsupported query');project(q.lon,q.lat);
+ if(![400,800,1600].includes(q.radius)||!['projects','applications','regional_reviews','zoning','heights'].includes(q.kind))throw new Error('Unsupported query');project(q.lon,q.lat);
+}
+
+/** Exact disk containment within a polygon union, including interior holes. */
+export function containsDisk(p:XY,radius:number,g:{type:string;coordinates?:unknown}):boolean{
+ if(geometryDistance(p,g)!==0)return false;
+ const polygons=g.type==='Polygon'?[g.coordinates as XY[][]]:g.coordinates as XY[][][];
+ let boundary=Infinity;
+ for(const polygon of polygons)for(const ring of polygon)for(let i=1;i<ring.length;i++)boundary=Math.min(boundary,segmentDistance(p,ring[i-1],ring[i]));
+ return boundary>=radius;
 }

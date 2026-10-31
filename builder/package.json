@@ -4,9 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:public": "tsc -b && vite build --mode public && .venv/bin/python scripts/package_public.py",
+    "build:public": "tsc -b && vite build --mode public && .venv/bin/python scripts/package_public.py && .venv/bin/python scripts/check_public_boundary.py",
     "test:planning": "node --experimental-strip-types --test tests/planning-spatial.test.mjs tests/planning-export.test.mjs",
-    "test:worker": "node --experimental-strip-types --test tests/planning-worker.test.mjs"
+    "test:worker": "node --experimental-strip-types --test tests/planning-worker.test.mjs",
+    "test:transport": "node --experimental-strip-types --test tests/transport.test.mjs"
   },
   "dependencies": {
     "cesium": "1.145.0",

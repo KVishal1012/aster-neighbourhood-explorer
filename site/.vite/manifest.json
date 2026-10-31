@@ -1,0 +1,33 @@
+{
+  "index.html": {
+    "file": "assets/index-D_ZRYGCJ.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/planning/Transportation.tsx",
+      "src/planning/PlanningMap.tsx"
+    ],
+    "css": [
+      "assets/index-B1QI06Oz.css"
+    ]
+  },
+  "src/planning/PlanningMap.tsx": {
+    "file": "assets/PlanningMap-BsjolHwE.js",
+    "name": "PlanningMap",
+    "src": "src/planning/PlanningMap.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/planning/Transportation.tsx": {
+    "file": "assets/Transportation-CWzgXMwo.js",
+    "name": "Transportation",
+    "src": "src/planning/Transportation.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  }
+}

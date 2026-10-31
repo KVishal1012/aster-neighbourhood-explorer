@@ -27,6 +27,7 @@ test('compiled public worker: no API dependency, pinned failures, unknown locati
   let r=await call('init',{base:'https://example.test/planning/',id});assert.equal(r.result.health.status,'unavailable');
   r=await call('query',{lon:-79.3832,lat:43.6532,radius:800,kind:'projects',stage:''});assert.equal(r.result.rows.length,1);assert.equal(r.result.rows[0].status,'Active');
   r=await call('query',{lon:-79.3832,lat:43.6532,radius:800,kind:'projects',stage:'',unlocated:true});assert.equal(r.result.rows[0].id,'projects:3');
+  r=await call('search',{query:'AB'});assert.deepEqual(r.result,[]);
   r=await call('init',{base:'https://example.test/planning/',id:'b'.repeat(20)});assert.match(r.error,/No newer snapshot was substituted/);
  }finally{globalThis.fetch=originalFetch;delete globalThis.self;}
 });

@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {activeServices,nearbyTransit,dateKey} from '../src/planning/transport.ts';
+import {project} from '../src/planning/spatial.ts';
+const xy=project(-79.3832,43.6532);
+const calendar=[{service_id:'weekday',start_date:'20261001',end_date:'20261031',monday:'1',tuesday:'1',wednesday:'1',thursday:'1',friday:'1',saturday:'0',sunday:'0'}];
+const data={calendar,exceptions:[{service_id:'weekday',date:'20261012',exception_type:'2'},{service_id:'holiday',date:'20261012',exception_type:'1'}],routes:{r:{route_short_name:'1',route_long_name:'Test'}},stops:{a:{attributes:{stop_name:'Edge'},xy:[xy[0]+800,xy[1]],routes:['r'],hours:[['r','weekday',8,5],['r','holiday',8,2],['r','weekday',25,3]]},b:{attributes:{},xy:[xy[0]+800.01,xy[1]],routes:[],hours:[]},station:{attributes:{},xy:null,routes:[],hours:[]}}};
+const manifest={feed:{feed_start_date:'20261001',feed_end_date:'20261031'}};
+test('exceptions override weekday service without inventing holiday service',()=>{assert.deepEqual([...activeServices(data,'2026-10-12')],['holiday']);assert.deepEqual([...activeServices(data,'2026-10-11')],[]);});
+test('exact-radius inclusion and scheduled counts remain distinct from outside-date unavailability',()=>{const r=nearbyTransit(data,manifest,-79.3832,43.6532,800,'2026-10-12',8);assert.equal(r.rows.length,1);assert.equal(r.rows[0].routes[0].departures,2);const unavailable=nearbyTransit(data,manifest,-79.3832,43.6532,800,'2026-11-01',8);assert.equal(unavailable.coveredDate,false);assert.equal(unavailable.rows[0].routes[0].departures,null);});
+test('after-midnight service is counted from the previous service day',()=>{const r=nearbyTransit(data,manifest,-79.3832,43.6532,800,'2026-10-10',1);assert.equal(r.rows[0].routes[0].departures,3);});
+test('invalid dates, hours and radii cannot produce misleading counts',()=>{assert.throws(()=>dateKey('2026-02-30'));assert.throws(()=>dateKey(''));assert.throws(()=>nearbyTransit(data,manifest,-79.3832,43.6532,800,'2026-10-12',24));assert.throws(()=>nearbyTransit(data,manifest,-79.3832,43.6532,700,'2026-10-12',8));});

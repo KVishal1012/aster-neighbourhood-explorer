@@ -1,4 +1,11 @@
 {
+  "transport": {
+    "available": true,
+    "snapshots": [
+      "0be13640dc976e5d4977"
+    ],
+    "bytes": 1772770
+  },
   "snapshots": [
     "02ce71e4d629746fc6fd",
     "3109928bc7881940611a",
