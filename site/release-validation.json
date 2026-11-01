@@ -1,14 +1,11 @@
 {
   "transport": {
-    "available": true,
-    "snapshots": [
-      "0be13640dc976e5d4977"
-    ],
-    "bytes": 1772770
+    "available": false
   },
   "snapshots": [
     "02ce71e4d629746fc6fd",
     "3109928bc7881940611a",
+    "436c7a5632403f1336a3",
     "485b82edca845a71a02b",
     "4fc1b96f4baf03b9ac17",
     "7822998cde68375df894",
@@ -20,7 +17,7 @@
     "f3a5f9ee996a0f10f91c",
     "f70efef251ee762abe0f"
   ],
-  "objects": 2764,
-  "compressed_bytes": 660331194,
+  "objects": 2873,
+  "compressed_bytes": 666954862,
   "raw_private_files_included": false
 }
